@@ -1,0 +1,25 @@
+ body {
+    background: url('./1.png');
+    background-size: cover;
+    color: antiquewhite;
+    background-attachment: fixed;
+  }
+
+  .ui.container > div{
+    background-color: black;
+  }
+
+  #root > div > div > div.ui.secondary.pointing.menu > a {
+    color: antiquewhite;
+    font-size: 30px;
+    padding: 8px;
+  }
+
+  
+
+  #root > div > div > div.ui.secondary.pointing.menu > a > img {
+    color: antiquewhite;
+    height: 35px;
+    width: 270px;
+    background-size: cover;
+}
