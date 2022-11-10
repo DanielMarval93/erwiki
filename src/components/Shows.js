@@ -1,16 +1,26 @@
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
+import { Link, useLocation } from "react-router-dom";
 import eldenRingApi from "../apis/eldenring";
 
-const Shows = (props) =>{
+const useQuery = () => {
+    const { search } = useLocation();
+  
+    return useMemo(() => new URLSearchParams(search), [search]);
+  }
 
+const Shows = (props) =>{
+    
     const category=`/${props.category}`;
     const [shows, setShows]=useState([]);
+    const queryParams = useQuery()
+    const page = queryParams.get("page")
 
     useEffect(()=>{
-        const fetchShows = () =>{eldenRingApi.get(category ,{params:{limit: 100, page:0 }}).then(
+        const fetchShows = () =>{eldenRingApi.get(category ,{params:{limit: 10, page: page || 0 }}).then(
                 response => {setShows(response.data.data)}
             );};
             fetchShows();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     const RenderShows = (props) =>{
@@ -19,19 +29,25 @@ const Shows = (props) =>{
         };
     
         const renderedShow =props.shows.map( show => {
-        return(
-            <div className="four wide column">
-                <div className="ui item " key= {show.id} >
-                    <div className="ui content">
-                        <div className='ui text' style={{fontWeight: 'bold', textAlign: 'center'}}>{show.name}</div>
-                        <div className="ui medium image">
-                            <img src={show.image} alt={show.name} style={{height: '160px', marginLeft: 'auto',  marginRight:'auto'}} />
+
+            const linkText= `${category}/${show.id}`
+
+                
+            return(
+                <div className="four wide column" key= {show.id}>
+                    <div className="ui item"  >
+                        <div className="ui content">
+                            <div className="renderedText" >{show.name}</div>
+                            <Link to={linkText} className="ui medium image">
+                                <img className="renderedImage" src={show.image} alt={show.name}/>
+                            </Link>
+                            <Link  to={linkText} className='ui text'>
+                                {show.description}
+                            </Link>
                         </div>
-                        <div className='ui text' style={{fontStyle: 'italic', textAlign: 'justify'}}>{show.description}</div>
                     </div>
                 </div>
-            </div>
-            )
+                )
         });
     
         return <div className="ui grid">{renderedShow}</div>
@@ -39,7 +55,7 @@ const Shows = (props) =>{
 
     return(
         <div className="ui container">
-            <h1 className="header">{props.title}</h1>
+            <h1 className="header" style={{textAlign:'center'}}>{props.title}</h1>
                 <RenderShows shows={shows}/>
         </div>
     )
