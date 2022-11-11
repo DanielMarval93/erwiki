@@ -18,8 +18,6 @@ const ShowItem = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
     
-    console.log(item.stats);
-
     return(
         <div key={item.id} style={{textAlign:"center"}}>
             <div >

@@ -2,7 +2,7 @@ body {
   background: url("./1.png");
   background-size: cover;
   background-position-x: center;
-  color: antiquewhite;
+  color: #ab966f;
   background-attachment: fixed;
 }
 
@@ -18,7 +18,7 @@ body {
 }
 
 #root > div > div > div.ui.secondary.pointing.menu > a {
-  color: antiquewhite;
+  color: #ab966f;
   font-size: 30px;
   padding: 8px;
 }
@@ -29,10 +29,10 @@ body {
   margin-right: auto;
 }
 
-.ui.medium.image{
-width: -webkit-fill-available; 
-margin-left: auto;
-margin-right: auto;
+.ui.medium.image {
+  width: -webkit-fill-available;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .secondary.pointing.menu {
@@ -42,7 +42,7 @@ margin-right: auto;
 }
 
 #root > div > div > div.ui.secondary.pointing.menu > a > img {
-  color: antiquewhite;
+  color: #ab966f;
   height: 35px;
   width: 270px;
   background-size: cover;
@@ -62,4 +62,26 @@ margin-right: auto;
   box-shadow: none;
   border-color: transparent;
   padding: 10px;
+}
+
+.eight.wide.column {
+  font-family: "Spectral", "fallback", Helvetica, Arial, sans-serif;
+  text-transform: uppercase !important;
+  color: #ab966f;
+}
+
+.eight.wide.column > a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.link{
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+  border-color: transparent;
 }

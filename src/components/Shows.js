@@ -17,7 +17,7 @@ const Shows = (props) =>{
     const queryParams = useQuery()
     const page = queryParams.get("page")
 
-    useEffect(pages=>{
+    useEffect(()=>{
         const fetchShows = () =>{eldenRingApi.get(category ,{params:{limit: 16, page: page || 0 }}).then(
                 response => {setShows(response.data.data)
                 setPages(Math.trunc((response.data.total/16)))}
@@ -25,6 +25,7 @@ const Shows = (props) =>{
             fetchShows();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
+
 
     const RenderPages = () =>{
 
@@ -34,15 +35,19 @@ const Shows = (props) =>{
             const rows = [];
             for (let i = 0; i <= pages; i++) {
                 const pageLink =`${category}?page=${i}`;
-                rows.push(<Link to={pageLink}>{i}</Link>);
+                rows.push(<a className='link' href={pageLink}>{i}</a>);
             }
             
             const renderedPages =rows.map(row =>{
                 return(
-                    <>{row}</>
+                    <>  {row}  </>
                 )
             })
-            return (<div style={{marginTop: "15px", marginLeft: '43%', marginRight: '43%',}}>{renderedPages}</div>)         
+            return (
+            <div style={{textAlign:"center", padding: '20px'}}>
+                {renderedPages}
+            </div>
+            )         
         }
   
     }
@@ -82,7 +87,9 @@ const Shows = (props) =>{
         <div className="ui container">
             <h1 className="header" style={{textAlign:'center'}}>{props.title}</h1>
                 <RenderShows shows={shows}/>
+                <br/>
                 <RenderPages/>
+                <br/>
         </div>
     )
 };
