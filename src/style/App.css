@@ -10,7 +10,7 @@ body {
   margin-top: 10px;
 }
 .ui.container > div {
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgb(0, 0, 0, 0.8);
 }
 
 .ui.centered.grid div {
