@@ -16,7 +16,7 @@ const Shows = (props) =>{
     const page = queryParams.get("page")
 
     useEffect(()=>{
-        const fetchShows = () =>{eldenRingApi.get(category ,{params:{limit: 10, page: page || 0 }}).then(
+        const fetchShows = () =>{eldenRingApi.get(category ,{params:{limit: 16, page: page || 0 }}).then(
                 response => {setShows(response.data.data)}
             );};
             fetchShows();
@@ -41,6 +41,7 @@ const Shows = (props) =>{
                             <Link to={linkText} className="ui medium image">
                                 <img className="renderedImage" src={show.image} alt={show.name}/>
                             </Link>
+                            <br/>
                             <Link  to={linkText} className='ui text'>
                                 {show.description}
                             </Link>
@@ -50,7 +51,7 @@ const Shows = (props) =>{
                 )
         });
     
-        return <div className="ui grid">{renderedShow}</div>
+        return <div className="ui stackable four column grid">{renderedShow}</div>
     };
 
     return(
