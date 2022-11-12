@@ -35,7 +35,7 @@ const Shows = (props) =>{
             const rows = [];
             for (let i = 0; i <= pages; i++) {
                 const pageLink =`${category}?page=${i}`;
-                rows.push(<a className='link' href={pageLink}>{i}</a>);
+                rows.push(<Link className='link' to={pageLink}>{i}</Link>);
             }
             
             const renderedPages =rows.map(row =>{
@@ -86,13 +86,13 @@ const Shows = (props) =>{
 
     return(
         <div className="ui container">
-            <div className="ui divider 1"></div>
+            <div className="ui divider"></div>
             <h1 className="header" style={{textAlign:'center'}}>{props.title}</h1>
-            <div className="ui divider 1"></div>
+            <div className="ui divider"></div>
             <RenderShows shows={shows}/>
-            <div className="ui divider 2"></div>
+            <div className="ui divider"></div>
             <RenderPages/>
-            <div className="ui divider 3"></div>
+            <div className="ui divider"></div>
         </div>
     )
 };
