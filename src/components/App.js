@@ -5,6 +5,7 @@ import Shows from "./Shows";
 import Main from "./Main";
 import Header from "./Header";
 import "../style/App.css";
+import SubHeader from "./SubHeader";
 
 const App = () => {
   return (
@@ -12,7 +13,9 @@ const App = () => {
       <BrowserRouter>
         <div >
           <Header />
-          <div style={{ paddingTop: "80px" }}>
+          <SubHeader/>
+          <div >
+          <div class="ui divider"></div>
             <Routes>
               <Route path="/" exact element={<Main />} />
               <Route

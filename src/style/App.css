@@ -17,7 +17,12 @@ body {
   text-align: center;
 }
 
+.ui.content {
+  color:#b4b2b0;
+}
+
 #root > div > div > div.ui.secondary.pointing.menu > a {
+  margin-top: 14px;
   color: #ab966f;
   font-size: 30px;
   padding: 8px;

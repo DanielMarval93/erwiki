@@ -20,10 +20,12 @@ const ShowItem = props => {
     
     return(
         <div key={item.id} style={{textAlign:"center"}}>
-            <div >
+            <div className="ui grid"></div>
+            <div className="ui content" >
                 <h1>
                     {item.name}
                 </h1>
+                <div class="ui divider"></div>
                 <img src={item.image} alt={item.name} style={{height:'300px', marginLeft: 'auto',  marginRight:'auto'}}/>
                 <p>{item.description}</p>
                 <RenderValues values={item.location} title="Location: "/>
@@ -52,6 +54,7 @@ const ShowItem = props => {
                 <RenderListValues values={item.drops} title="Drops: "/>
                 <RenderListValues values={item.scalesWith} title="Scales With: "/>
                 <RenderObjectValues values={item.stats} title="Stats With: "/>
+                <div class="ui divider"></div>
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@ const Shows = (props) =>{
                 )
             })
             return (
-            <div style={{textAlign:"center", padding: '20px'}}>
+            <div style={{textAlign:"center"}}>
                 {renderedPages}
             </div>
             )         
@@ -86,10 +86,11 @@ const Shows = (props) =>{
     return(
         <div className="ui container">
             <h1 className="header" style={{textAlign:'center'}}>{props.title}</h1>
-                <RenderShows shows={shows}/>
-                <br/>
-                <RenderPages/>
-                <br/>
+            <div class="ui divider"></div>
+            <RenderShows shows={shows}/>
+            <div class="ui divider"></div>
+            <RenderPages/>
+            <div class="ui divider"></div>
         </div>
     )
 };

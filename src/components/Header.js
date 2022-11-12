@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import SubHeader from "./SubHeader";
 
 const Header = () => {
 
@@ -8,10 +9,12 @@ const Header = () => {
                 <Link to="/" className="item">
                     <img src="https://cultura-gamer.com/wp-content/uploads/2021/01/logo11.png" alt="Elden Ring Lore Wiki"/>
                 </Link>
+                
             <div className="right menu">
-
             </div>
+            <div class="ui divider"></div>
         </div>
+        
     );
 };
 
