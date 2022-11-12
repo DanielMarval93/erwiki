@@ -21,6 +21,7 @@ const ShowItem = props => {
     return(
         <div key={item.id} style={{textAlign:"center"}}>
             <div className="ui grid"></div>
+            <div className="ui divider"></div>
             <div className="ui content" >
                 <h1>
                     {item.name}
