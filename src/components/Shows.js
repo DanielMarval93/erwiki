@@ -1,4 +1,4 @@
-import {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import { Link, useLocation } from "react-router-dom";
 import eldenRingApi from "../apis/eldenring";
 
@@ -24,7 +24,7 @@ const Shows = (props) =>{
             );};
             fetchShows();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[]);
+    },page);
 
 
     const RenderPages = () =>{
@@ -35,12 +35,13 @@ const Shows = (props) =>{
             const rows = [];
             for (let i = 0; i <= pages; i++) {
                 const pageLink =`${category}?page=${i}`;
-                rows.push(<a className='link' href={pageLink}>{i}</a>);
+                rows.push(<Link className='link' to={pageLink}>{i}</Link>);
             }
             
             const renderedPages =rows.map(row =>{
+                
                 return(
-                    <>  {row}  </>
+                    <React.Fragment key={row.props.href}>  {row}  </React.Fragment>
                 )
             })
             return (
@@ -86,11 +87,11 @@ const Shows = (props) =>{
     return(
         <div className="ui container">
             <h1 className="header" style={{textAlign:'center'}}>{props.title}</h1>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
             <RenderShows shows={shows}/>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
             <RenderPages/>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
         </div>
     )
 };

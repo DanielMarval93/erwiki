@@ -15,7 +15,7 @@ const App = () => {
           <Header />
           <SubHeader/>
           <div >
-          <div class="ui divider"></div>
+          <div className="ui divider"></div>
             <Routes>
               <Route path="/" exact element={<Main />} />
               <Route

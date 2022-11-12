@@ -12,7 +12,7 @@ const Header = () => {
                 
             <div className="right menu">
             </div>
-            <div class="ui divider"></div>
+            <div className="ui divider"></div>
         </div>
         
     );
