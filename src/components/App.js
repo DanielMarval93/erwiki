@@ -9,12 +9,13 @@ import SubHeader from "./SubHeader";
 
 const App = () => {
   return (
-    <div className="ui container" >
+    <div className="ui container">
       <BrowserRouter>
-        <div >
+        <div>
           <Header />
-          <SubHeader/>
-          <div >
+          
+          <SubHeader />
+          <div>
             <Routes>
               <Route path="/" exact element={<Main />} />
               <Route
