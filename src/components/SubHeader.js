@@ -42,7 +42,7 @@ const SubHeader = () => {
 
   return (
     <div
-      className="ui five column grid"
+      className="subheaderdropdown ui five column grid"
       style={{ textAlign: "center", width: "100%" }}
     >
       <div className="row" style={{ marginTop: "50px" }}>

@@ -9,6 +9,13 @@ body {
 .ui.cointainer {
   margin-top: 10px;
 }
+
+@media (max-width:700px){
+.subheaderdropdown{  
+    display:none !important;
+  }
+}
+
 .ui.container > div {
   background-color: rgb(0, 0, 0, 0.8);
 }
@@ -45,6 +52,7 @@ body {
   z-index: 90;
   width: 100%;
 }
+
 
 #root > div > div > div.ui.secondary.pointing.menu > a > img {
   color: #ab966f;
